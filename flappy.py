@@ -38,6 +38,8 @@ def rendertubes(arrtubes):
     
 arrtubes = [] 
 
+
+
 time = 0
 player = pygame.Rect(1280/2, 720/2, 25,25)
 while True:
@@ -46,8 +48,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
         if event.type == pygame.KEYDOWN:
-            if event.type == pygame.K_UP: 
-                player.y += 10    
+            if event.key == pygame.K_SPACE: 
+                player.y -=100    
         
     SCREEN.fill(background)
     currenttime = pygame.time.get_ticks()
