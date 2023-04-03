@@ -60,7 +60,7 @@ while True:
     playeranimation(player)
     rendertubes(arrtubes)
     tube_animation(arrtubes)
-    TUBE_COLOR = (random.randint(0,250),random.randint(0,250),random.randint(0,250))
+    ## TUBE_COLOR = (random.randint(0,250),random.randint(0,250),random.randint(0,250))
     pygame.display.update()
     clock.tick(60)
 
