@@ -14,11 +14,11 @@ ENEMY_COLOR = (250,0,100)
 SPEED = 5
 BACKGROUND = (10,20,30)
 GRAVITY =5
-FONT = pygame.font.SysFont("Calibri", 20)
+FONT = pygame.font.SysFont("Calibri", 20)  
 SCORE = 0
-SCALE = 100
-FLAPPYBIRDIMAGE = pygame.image.load('picflappy.png')
-FLAPPYBIRDIMAGESCALED = pygame.transform.scale(FLAPPYBIRDIMAGE, (SCALE,SCALE))
+SCALE = 60  
+FLAPPYBIRDIMAGE = pygame.image.load('picflappy.png') 
+FLAPPYBIRDIMAGESCALED = pygame.transform.scale(FLAPPYBIRDIMAGE, (SCALE,SCALE)) 
 
 
 class Tube:
@@ -54,7 +54,7 @@ def updateTubes(arrtubes):
 		tube.update() 
 
 def checkDown(player):
-	if player.y > 500:
+	if player.y > 630: 
 		pygame.quit()
 
 
