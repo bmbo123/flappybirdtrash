@@ -56,6 +56,10 @@ def updateTubes(arrtubes):
 def checkDown(player):
 	if player.y > 630: 
 		pygame.quit()
+def Scoreing(arrtubes):
+	for tube in arrtubes:  
+		if tube.x == 1280/2:		
+			SCORE += 1
 
 
 arrtubes = [] 
@@ -63,7 +67,7 @@ arrtubes = []
 time = 0
 player = pygame.Rect(1280/2, 720/2, SCALE,SCALE)
 while True: 
-	for event in pygame.event.get():
+	for event in pygame.event.get():  
 		if event.type == pygame.QUIT:
 			pygame.quit()
 		if event.type == pygame.KEYDOWN:
@@ -76,6 +80,8 @@ while True:
 		arrtubes.append(Tube())
 		time = currenttime
 	pygame.Surface.blit(SCREEN, FLAPPYBIRDIMAGESCALED, player)
+	Scoreing(arrtubes)
+	print(SCORE)
 	drawScreen()
 	## TUBE_COLOR = (random.randint(0,250),random.randint(0,250),random.randint(0,250))
 	clock.tick(60)
