@@ -12,7 +12,8 @@ pygame.display.set_caption("Fortnite")
 TUBE_COLOR = (150,250,100)
 ENEMY_COLOR = (250,0,100)
 SPEED = 5
-BACKGROUND = (10,20,30)
+BACKGROUND = pygame.image.load('back.png')
+BACKGROUNDSCALED = pygame.transform.scale(BACKGROUND,(SCREEN_WIDTH,SCREEN_HEIGHT+10))
 GRAVITY =5
 FONT = pygame.font.SysFont("Calibri", 20)  
 SCORE = 0
@@ -58,6 +59,7 @@ def checkDown(player):
 		pygame.quit()
 
 
+
 arrtubes = [] 
 
 time = 0
@@ -70,7 +72,7 @@ while True:
 			if event.key == pygame.K_SPACE: 
 				player.y -=100    
 		checkDown(player)
-	SCREEN.fill(BACKGROUND)
+	SCREEN.blit(BACKGROUNDSCALED,(0,0))
 	currenttime = pygame.time.get_ticks()
 	if currenttime - time > 1700:
 		arrtubes.append(Tube())
